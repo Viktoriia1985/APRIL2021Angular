@@ -18,7 +18,7 @@ import {PostGuardService} from "./services/post-guard.service";
 
 let routes: Routes = [
   {
-    path: '',
+    path: 'posts',
     component: PostsComponent,
     canDeactivate: [PostGuardService]
   },
@@ -28,13 +28,13 @@ let routes: Routes = [
     canActivate: [PostGuardService],
     canDeactivate: [PostGuardService]
   },
+  // {
+  //   path: 'posts',
+  //   redirectTo: '',
+  //   pathMatch: 'full'
+  // },
   {
-    path: 'posts',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
-  {
-    path: '',
+    path: 'users',
     component: UsersComponent,
     canDeactivate: [UserGuardService]
   },
@@ -44,11 +44,11 @@ let routes: Routes = [
     canActivate: [UserGuardService],
     canDeactivate: [UserGuardService]
   },
-  {
-    path: 'users',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: 'users',
+  //   redirectTo: '',
+  //   pathMatch: 'full'
+  // },
 
 ];
 
