@@ -1,21 +1,29 @@
-// import {IAddress} from "./iAddress";
-// import {IGeo} from "./iGeo";
-
+import {IAddress} from "./iAddress";
 
 export interface IUser {
   id: number;
   name: string;
   username: string;
   email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
+  address: IAddress;
   phone: string;
 }
+
+
+// export interface IUser {
+//   id: number;
+//   name: string;
+//   username: string;
+//   email: string;
+//   address: {
+//     street: string;
+//     suite: string;
+//     city: string;
+//     zipcode: string;
+//     geo: {
+//       lat: string;
+//       lng: string;
+//     };
+//   };
+//   phone: string;
+// }

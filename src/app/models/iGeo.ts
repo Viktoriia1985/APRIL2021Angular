@@ -1,4 +1,4 @@
-// export interface IGeo {
-//   lat: -37.3159;
-//   lng: 81.1496;
-// }
+export interface IGeo {
+  lat: string;
+  lng: string;
+}

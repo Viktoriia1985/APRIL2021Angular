@@ -1,15 +1,18 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 import {AppComponent} from './app.component';
-import {RouterModule} from "@angular/router";
-import {UsersComponent} from './users/users.component';
-import {PostsComponent} from './posts/posts.component';
-import {HttpClientModule} from "@angular/common/http";
-import {routes} from "./routes/basic.routes";
-import {UserComponent} from './user/user.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-
+import {
+  PostComponent,
+  PostDetailsComponent,
+  PostsComponent,
+  UserComponent,
+  UserDetailsComponent,
+  UsersComponent
+} from './components';
+import {routes} from "./routes";
 
 
 @NgModule({
@@ -19,6 +22,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     PostsComponent,
     UserComponent,
     UserDetailsComponent,
+    PostComponent,
+    PostDetailsComponent,
 
   ],
   imports: [

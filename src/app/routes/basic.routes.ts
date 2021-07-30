@@ -1,7 +1,5 @@
-import {UsersComponent} from "../users/users.component";
-import {PostsComponent} from "../posts/posts.component";
-import {UserDetailsComponent} from "../user-details/user-details.component";
 import {Routes} from "@angular/router";
+import {PostDetailsComponent, PostsComponent, UserDetailsComponent, UsersComponent} from "../components";
 
 
 export let routes:Routes = [
@@ -14,11 +12,14 @@ export let routes:Routes = [
     ]
   }, /* шлях в app component*/
 
-  // {path: 'users/:id', component: UserDetailsComponent}, /* шлях в app component*/
+
+  // {path: 'posts', component: PostsComponent},
+  // {path: 'posts/:id', component: PostDetailsComponent},
+
   {path: 'posts',
     component: PostsComponent,
-/*    children: [
-      {path: ':id', component:PostDetailsComponent},
-    ]*/
+      children: [
+        {path: ':id', component: PostDetailsComponent},
+      ]
   },
 ];
