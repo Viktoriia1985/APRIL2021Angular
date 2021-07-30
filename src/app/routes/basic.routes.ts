@@ -12,11 +12,13 @@ export let routes:Routes = [
       // /users/:id
       {path: ':id', component: UserDetailsComponent}
     ]
-
   }, /* шлях в app component*/
 
-
-
   // {path: 'users/:id', component: UserDetailsComponent}, /* шлях в app component*/
-  {path: 'posts', component: PostsComponent},
+  {path: 'posts',
+    component: PostsComponent,
+/*    children: [
+      {path: ':id', component:PostDetailsComponent},
+    ]*/
+  },
 ];
