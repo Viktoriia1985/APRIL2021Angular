@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {IUser} from "../models/User";
+import {IUser} from "../models";
 
 
 @Injectable({
@@ -10,16 +10,15 @@ import {IUser} from "../models/User";
 })
 export class UserService {
 
-  private _url = 'https://jsonplaceholder.typicode.com/users'
+  private _url = 'https://jsonplaceholder.typicode.com/users';
 
-  constructor(private  httpClient: HttpClient) {
-  }
+  constructor(private  httpClient: HttpClient) {}
 
   getUsers(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>(this._url)
+    return this.httpClient.get<IUser[]>(this._url);
   }
 
   getUserById(id: number): Observable<IUser> {
-    return this.httpClient.get<IUser>(this._url + '/' + id)
+    return this.httpClient.get<IUser>(this._url + '/' + id);
   }
 }
