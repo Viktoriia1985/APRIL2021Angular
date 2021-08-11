@@ -1,11 +1,10 @@
 <!--<p>{{post | json}}</p>-->
 
-<h3>{{post?.id}}</h3>
+<h3>{{post.id}}</h3>
 <hr>
-<ul *ngIf="post">
+<ul>
   <li>{{post.userId}}</li>
   <li>{{post.title}}</li>
   <li>{{post.body}}</li>
-
 </ul>
 
