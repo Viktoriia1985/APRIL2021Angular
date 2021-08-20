@@ -11,28 +11,22 @@ import {PostService} from "../../services";
 })
 export class ReactiveFormComponent implements OnInit {
 
+  myForm: FormGroup;
   posts: IPost[];
   post: IPost;
-  postId: number;
 
-  postName = new FormControl('');
-
-  myForm: FormGroup = new FormGroup(
-    {
-      postName: this.postName,
-    }
-  );
-
-  constructor(private postService: PostService) {
-  }
+  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
+    this.myForm = new FormGroup({
+      postId: new FormControl('')
+      }
+    );
     this.postService.getPosts().subscribe(value => this.posts = value);
   }
 
   save() {
-    this.postService.getPostById(this.postId).subscribe(value => this.post = value);
-    // console.log(this.myForm)
+    this.postService.getPostById(this.myForm.controls.postId.value).subscribe(value => this.post = value);
   }
 
 
