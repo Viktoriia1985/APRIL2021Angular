@@ -1,8 +1,10 @@
 <form [formGroup]="myForm" (ngSubmit)="save()">
-  <select formControlName="postId">
-    <option *ngFor="let post of posts" name="name" value="{{post.id}}">{{post.title}}</option>
-  </select>
-  <button>click</button>
-</form>
 
-<app-post-details *ngIf="post" [post]="post"></app-post-details>
+  <div>
+    <input type="text" [formControl]="post">
+
+    <option *ngFor="myForm let post of posts" name="name" value="{{post.id}}">{{post.title}}</option>
+    <button>click</button>
+  </div>
+
+</form>
